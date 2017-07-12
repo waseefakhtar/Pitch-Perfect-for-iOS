@@ -20,7 +20,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.stopButton.isEnabled = false
+        stopButton.isEnabled = false
         
         // Change the buttons property to Scale Aspect Fit to fix the issue when orientation is horizontal.
         recordButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
@@ -72,9 +72,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     func configureUI(recording: Bool) {
-        self.recordButton.isEnabled = recording ? false : true
-        self.stopButton.isEnabled = recording ? true : false
-        self.recordLabel.text = recording ? "Recording in progress..." : "Tap to Record"
+        recordButton.isEnabled = !recording
+        stopButton.isEnabled = recording
+        recordLabel.text = recording ? "Recording in progress..." : "Tap to Record"
     }
 
 }
