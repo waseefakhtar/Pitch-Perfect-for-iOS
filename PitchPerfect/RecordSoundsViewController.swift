@@ -71,9 +71,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
-    func configureUI(recording: Bool, labelString: String) {
-        recordButton.isEnabled = !recording
-        stopButton.isEnabled = recording
+    func configureUI(recording enable: Bool, labelString: String) {
+        recordButton.isEnabled = !enable
+        stopButton.isEnabled = enable
         recordLabel.text = labelString
     }
 
